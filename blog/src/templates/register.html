@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-3 mb-5">
+  <div class="row mt-5 mb-5 shadow align-items-center">
+    
+    <!-- Left side: Login Form -->
+    <div class="col-lg-6 p-4">
+      <h3 class="mb-4">Register</h3>
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            required
+          />
+        </div>
+        
+        <!-- Remember me -->
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="remember" />
+          <label class="form-check-label" for="remember">Remember me</label>
+        </div>
+        
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary w-100">Register</button>
+      </form>
+    </div>
+
+    <!-- Right side: Image -->
+    <div class="col-lg-6 text-center">
+      <img 
+        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/ee/2d/9d/jw-marriott-hotel-mumbai.jpg?w=900&h=500&s=1" 
+        alt="Hotel Image" 
+        class="img-fluid rounded shadow"
+      >
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
