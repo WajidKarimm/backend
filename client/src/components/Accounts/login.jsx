@@ -42,18 +42,19 @@ const Login = () => {
   const imageURL =
     "https://media.istockphoto.com/id/1550071750/photo/green-tea-tree-leaves-camellia-sinensis-in-organic-farm-sunlight-fresh-young-tender-bud.jpg?s=612x612&w=0&k=20&c=RC_xD5DY5qPH_hpqeOY1g1pM6bJgGJSssWYjVIvvoLw=";
 
-  const [account, setAccount] = useState('login');
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
-  const [signup, setSingup] = useState(SignupInitialValues);
+const [account, setAccount] = useState('login');
+const [formData, setFormData] = useState({ name: '', email: '', password: '' });
 
-  const toggleAccountView = () => {
-    setAccount(account === 'signup' ? 'login' : 'signup');
-    setFormData({ name: '', email: '', password: '' }); // reset inputs
-  };
+const toggleAccountView = () => {
+  setAccount(account === 'signup' ? 'login' : 'signup');
+  setFormData({ name: '', email: '', password: '' }); // reset inputs
+};
 
-  const onInputChange = (e) => {
-    setSingup({ ...signup, [e.target.name]: e.target.value });
-  };
+const onInputChange = (e) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
+
+
 
   const fields = account === 'login'
     ? [
